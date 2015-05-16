@@ -56,9 +56,4 @@ public class FileCory {
         inputChannel.close();
         outputChannel.close();
     }
-
-    public static void main(String[] args) throws IOException {
-        copyWithTransfer("/Users/wei/Desktop/屏幕快照 2015-05-11 00.43.17.png","/Users/wei/Desktop/1.png");
-        copyWithBuffer("/Users/wei/Desktop/屏幕快照 2015-05-11 00.43.17.png", "/Users/wei/Desktop/2.png");
-    }
 }
