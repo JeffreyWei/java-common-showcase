@@ -27,19 +27,6 @@ public class TCPClient implements Runnable {
         }
     }
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) throws IOException {
-        TCPClient client = new TCPClient(8080);
-        try {
-            new Thread(client).start();
-        } catch (Exception e) {
-            e.printStackTrace();
-            client.stopServer();
-        }
-    }
-
     public void run() {
         while (true) {
             try {
@@ -92,7 +79,7 @@ public class TCPClient implements Runnable {
     /**
      * 停止客户端
      */
-    private void stopServer() {
+    public void stopServer() {
         try {
             if (selector != null && selector.isOpen()) {
                 selector.close();

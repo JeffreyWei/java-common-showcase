@@ -24,20 +24,10 @@ public class TCPServer implements Runnable {
         ssc.register(selector, SelectionKey.OP_ACCEPT);
     }
 
-    public static void main(String[] args) throws IOException {
-        TCPServer server = new TCPServer(8080);
-        try {
-            new Thread(server).start();
-        } catch (Exception e) {
-            e.printStackTrace();
-            server.stopServer();
-        }
-    }
-
     /**
      * 停止服务器端
      */
-    private void stopServer() {
+    public void stopServer() {
         try {
             if (selector != null && selector.isOpen()) {
                 selector.close();
